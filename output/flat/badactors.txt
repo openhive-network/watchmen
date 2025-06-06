@@ -439,6 +439,8 @@ hitbtcexchange
 hitbtc-pro
 hive24airdrop
 hive-bybit
+hivechain
+hivechainflow
 hivecoinbase
 hivecoinfree
 hive-expo
@@ -475,6 +477,8 @@ ibttrex
 idex.market
 imnnowbooster
 inance
+inblockchain
+inhivepool
 innowbooster
 ithumb.hot
 ittrex
@@ -560,6 +564,7 @@ mxchive-btc20
 mxchivemxchive
 mxchivemxcsteem
 mxchivepromo
+mxchivesteem
 mxchivetest
 mxchive-trx20
 mxchive-web20
