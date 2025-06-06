@@ -1,5 +1,8 @@
 # watchmen
 
+[![Powered by Hive](https://img.shields.io/badge/Powered%20by-Hive-green?logo=hive_blockchain&logoColor=e31337)](https://hive.io)
+[![Development on Community GitLab](https://img.shields.io/badge/Development%20on-Community%20GitLab-orange)](https://gitlab.syncad.com/hive/watchmen)
+
 Community-driven, transparent watchlist of suspicious Hive accounts & DMCA URLs; a reference for scam, AML, and DMCA monitoring
 
 ---
