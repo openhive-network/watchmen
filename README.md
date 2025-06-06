@@ -31,7 +31,7 @@ Accounts on Steem 💩™, or any other fork are **not** covered by this watchli
 │ ├── hiveabuse/
 │ │ └── <your‐files‐here>
 │ └── …
-├── outputs/ # (generated automatically by pipelines)
+├── output/ # (generated automatically by pipelines)
 │ ├── flat/
 │ ├── json/
 │ └── csv/
