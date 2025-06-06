@@ -15,6 +15,7 @@ files=(
   "$input_root/condenser-wallet/BadActorList.js"
   "$input_root/denser/bad-actor-list.ts"
   "$input_root/ecency/bad-actors.json"
+  "$input_root/community/bad-actors.txt"
 )
 
 {
@@ -29,6 +30,8 @@ files=(
       tail -n +2 "$file" | head -n -5
     elif [[ "$ext" == "json" ]]; then
       grep -Eo '"[^"]+"' "$file" | tr -d '"'
+    elif [[ "$ext" == "txt" ]]; then
+      cat "$file"
     else
       echo "Skipping unsupported file: $file" >&2
     fi
