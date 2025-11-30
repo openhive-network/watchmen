@@ -15,11 +15,12 @@ files=(
   "$input_root/condenser-wallet/BadActorList.js"
   "$input_root/denser/bad-actor-list.ts"
   "$input_root/ecency/bad-actors.json"
-  "$input_root/community/bad-actors.txt"
+  # community .txt files will be added via glob in the loop
 )
 
 {
-  for file in "${files[@]}"; do
+  # Add all *.txt files from $input_root/community
+  for file in "${files[@]}" "$input_root/community"/*.txt; do
     if [[ ! -f "$file" ]]; then
       echo "Warning: $file not found, skipping." >&2
       continue
@@ -36,6 +37,6 @@ files=(
       echo "Skipping unsupported file: $file" >&2
     fi
   done
-} | sort -u > "$output_file"
+} | tr -d '\r' | sort -u > "$output_file"
 
 echo "Generated flat list: $output_file"
