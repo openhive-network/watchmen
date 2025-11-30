@@ -1,5 +1,6 @@
 bdhivesteemaio
 bitgethiveaio
+depositmexc
 huobi-pro-beb20
 huobi-pro-eth20
 huobi-pro-ltc
