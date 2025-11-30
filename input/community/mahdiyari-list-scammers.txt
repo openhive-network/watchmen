@@ -1,0 +1,8 @@
+huobi-pro-beb20
+huobi-pro-trc20
+huobi-pro-eth20
+huobi-pro-ltc
+huobi-pro-sol
+bdhivesteemaio
+mxchiveaio
+bitgethiveaio
