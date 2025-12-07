@@ -9,5 +9,5 @@ huobi-pro-trc20
 mxchiveaio
 mxchive-dex
 testrewards
-uid99817314
 uid1001420589
+uid99817314
