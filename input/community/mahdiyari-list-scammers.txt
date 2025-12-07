@@ -7,3 +7,4 @@ huobi-pro-ltc
 huobi-pro-sol
 huobi-pro-trc20
 mxchiveaio
+mxchive-dex
