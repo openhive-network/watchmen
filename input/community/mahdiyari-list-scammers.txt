@@ -1,4 +1,7 @@
 bdhivesteemaio
+bdhivesteemltc
+bdhivesteemsteem
+bdhivesteemxlm
 bitgethiveaio
 depositmexc
 huobi-pro-beb20
