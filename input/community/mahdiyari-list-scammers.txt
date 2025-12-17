@@ -1,6 +1,9 @@
 bdhivesteemaio
+bdhivesteemavax
 bdhivesteemltc
 bdhivesteemsteem
+bdhivesteemsui
+bdhivesteemtao
 bdhivesteemxlm
 bitgethiveaio
 depositmexc
@@ -12,6 +15,7 @@ huobi-pro-trc20
 mxchiveaio
 mxchive-dex
 mxchiveltc
+taotestnet
 testrewards
 uid1001420589
 uid99817314
