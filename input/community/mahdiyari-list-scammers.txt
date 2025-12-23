@@ -9,6 +9,7 @@ bdhivesteemtao
 bdhivesteemxlm
 binancedeposit
 bitgethiveaio
+bitgethiveltc
 bizamexcmexc
 depositmexc
 g63amg
