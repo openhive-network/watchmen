@@ -15,6 +15,7 @@ depositmexc
 g63amg
 hivedcoin
 hivedep
+hiveglobalpool
 huobi-pro-beb20
 huobi-pro-eth20
 huobi-pro-ltc
