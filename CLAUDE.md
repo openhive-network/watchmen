@@ -55,6 +55,17 @@ Processes all input files (JS, TS, JSON, TXT) and outputs deduplicated sorted li
 | `input/*/sources.list` | URLs for upstream data sources |
 | `output/flat/badactors.txt` | Final consolidated output |
 
+## Output: badactors.txt
+
+`output/flat/badactors.txt` is the primary deliverable of this repository. It contains a deduplicated, sorted list of suspicious Hive account names (one per line).
+
+**Consumers:**
+- Cryptocurrency exchanges
+- Service providers
+- dApps and wallets
+
+Used to block or flag transfers, protecting users from phishing and scam attacks.
+
 ## Coding Conventions
 
 - Input files organized by provider/source in `input/<provider>/`
