@@ -13,6 +13,7 @@ bitgethiveltc
 bizamexcmexc
 depositmexc
 g63amg
+hivechaindexpool
 hivedcoin
 hivedep
 hiveglobalpool
