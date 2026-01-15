@@ -57,10 +57,12 @@ for file in $CHANGED; do
         info "Actual delta: +$new_entries -$removed_entries ($actual_delta entries)"
         info "Git diff: +$additions -$deletions ($total_diff lines)"
 
+        max_expected=$((actual_delta + 2))
+
         if [ "$actual_delta" -eq 0 ] && [ "$total_diff" -gt 0 ]; then
             warn "$file has line changes but no actual content change (formatting/encoding only?)"
-        elif [ "$actual_delta" -gt 0 ] && [ "$total_diff" -gt $((actual_delta * 3)) ]; then
-            warn "$file diff ($total_diff lines) is excessive for $actual_delta actual changes"
+        elif [ "$actual_delta" -gt 0 ] && [ "$total_diff" -gt "$max_expected" ]; then
+            warn "$file diff ($total_diff lines) is excessive for $actual_delta actual changes (expected max: $max_expected)"
             info "Consider appending new entries instead of reorganizing the file."
         fi
     else
