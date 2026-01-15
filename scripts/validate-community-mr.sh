@@ -52,13 +52,15 @@ for file in $CHANGED; do
         deletions=$(echo "$diff_stats" | awk '{print $2}')
         total_diff=$((additions + deletions))
 
-        info "New entries: $new_entries, Removed: $removed_entries"
-        info "Diff lines: +$additions -$deletions (total: $total_diff)"
+        actual_delta=$((new_entries + removed_entries))
 
-        if [ "$new_entries" -eq 0 ] && [ "$removed_entries" -eq 0 ] && [ "$total_diff" -gt 0 ]; then
+        info "Actual delta: +$new_entries -$removed_entries ($actual_delta entries)"
+        info "Git diff: +$additions -$deletions ($total_diff lines)"
+
+        if [ "$actual_delta" -eq 0 ] && [ "$total_diff" -gt 0 ]; then
             warn "$file has line changes but no actual content change (formatting/encoding only?)"
-        elif [ "$new_entries" -gt 0 ] && [ "$total_diff" -gt $((new_entries * 5)) ]; then
-            warn "$file diff ($total_diff lines) is excessive for $new_entries new entries"
+        elif [ "$actual_delta" -gt 0 ] && [ "$total_diff" -gt $((actual_delta * 3)) ]; then
+            warn "$file diff ($total_diff lines) is excessive for $actual_delta actual changes"
             info "Consider appending new entries instead of reorganizing the file."
         fi
     else
