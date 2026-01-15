@@ -47,9 +47,19 @@ Accounts on Steem 💩™, or any other fork are **not** covered by this watchli
 
 ### Adding Input Files
 
-- If you have any raw input files (e.g., CSVs or JSON feeds from a third‐party service), place them under:
-`input/<provider_name>/`
-for example `input/ecency/bad-actors.json`
+**Community submissions:**
+Add your file to `input/community/` and submit a merge request.
+
+- One account per line, plain text (`.txt`)
+- Use a single file with a short, meaningful name
+- Append new entries to your existing file, i.e. don't create numbered versions
+
+A 10-account update should show 10 new lines, not thousands of reshuffled ones.
+
+Sorting: not required for append-only updates; sort alphabetically if reorganizing the entire file.
+
+**Automated feeds:**
+If you maintain a programmatic list, open an issue so we can add a fetch script.
 
 ---
 
