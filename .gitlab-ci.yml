@@ -1,0 +1,16 @@
+stages:
+  - validate
+
+validate-community-submission:
+  stage: validate
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache bash git
+    - git fetch origin main
+  script:
+    - bash scripts/validate-community-mr.sh
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - input/community/**/*
+  allow_failure: true
