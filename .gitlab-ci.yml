@@ -1,6 +1,9 @@
 stages:
   - validate
 
+default:
+  tags: [public-runner-docker]
+
 validate-community-submission:
   stage: validate
   image: alpine:latest
