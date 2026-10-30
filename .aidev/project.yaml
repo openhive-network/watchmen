@@ -1,0 +1,80 @@
+# Profile for hive/watchmen, written by `aidev project scaffold` (#13561).
+#
+# Schema reference: docs/architecture/project-profile.md
+# Onboarding procedure: the `onboard-external-project` skill.
+# Guide: docs/operations/onboarding-an-external-project.md
+#
+# The generator writes a starting point, not a governed answer: every
+# binding below is the command a maintainer said this project runs, and it
+# is reviewed and edited like any other declaration.
+version: 2
+project: watchmen
+
+gitlab:
+  host: "gitlab.syncad.com"
+  path: "hive/watchmen"
+  id: 528
+
+# AIDEV integrates into its own branch (protected: Developers push/merge, no
+# force push) and hands it off to main by merge request (`aidev handoff`). main
+# is fast-forward only, so the hand-off is a linear one-commit-per-change copy.
+# AIDEV never pushes main, so `stable` is omitted.
+branches:
+  integration: "aidev/integration"
+  handoff: "main"
+  handoff_history: "linear"
+
+# How this project's suites execute (#13892): one kind, stated once. The image
+# of .aidev/runtime/Dockerfile (alpine with bash, git, GNU coreutils).
+environment:
+  kind: "container"
+  image: "registry.gitlab.syncad.com/hive/watchmen/aidev-tests@sha256:ca580817f75ba3b8694c12e7924a779e1bdf94d52858e78c1f2fac0f8a850b78"
+
+issues:
+  intake_label: todo
+  taxonomy: ".aidev/labels.yaml"
+  decompose:
+    # `never` is where an external project starts: nothing marks work
+    # approved on this project's behalf until there is a track record.
+    auto_todo: never
+  # Reports about this project's work are filed against this project.
+  watcher_reports: self
+
+# Verification slots. Each binding is what this project genuinely runs for
+# that slot — never one selection repeated under seven names, which makes
+# seven gates report on the same evidence while claiming to check seven
+# different things. Every slot runs .aidev/run-checks.sh in the image above,
+# offline. The repository has no test suite: the slots run the checks its
+# scripts allow (see .aidev/README.md).
+verification:
+  quick:
+    adapter: command
+    args: [".aidev/run-checks.sh", "quick", "syntax", "compile"]
+    artifacts: ["test-results/quick/"]
+  full:
+    adapter: command
+    args: [".aidev/run-checks.sh", "full", "syntax", "compile"]
+    artifacts: ["test-results/full/"]
+  baseline:
+    adapter: command
+    args: [".aidev/run-checks.sh", "baseline", "compile"]
+    artifacts: ["test-results/baseline/"]
+  canary:
+    adapter: command
+    args: [".aidev/run-checks.sh", "canary", "syntax", "compile"]
+    artifacts: ["test-results/canary/"]
+  static:
+    adapter: command
+    args: [".aidev/run-checks.sh", "static", "syntax"]
+    artifacts: ["test-results/static/"]
+  coverage:
+    adapter: command
+    args: [".aidev/run-checks.sh", "coverage", "syntax", "compile"]
+    artifacts: ["test-results/coverage/"]
+  system:
+    adapter: command
+    args: [".aidev/run-checks.sh", "system", "syntax", "compile"]
+    artifacts: ["test-results/system/"]
+
+# Capability grants for target-side code. Empty until this project needs one.
+capabilities: []
