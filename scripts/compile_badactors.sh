@@ -32,11 +32,14 @@ files=(
     elif [[ "$ext" == "json" ]]; then
       grep -Eo '"[^"]+"' "$file" | tr -d '"'
     elif [[ "$ext" == "txt" ]]; then
+      # Terminate the last line even if the file lacks a final newline,
+      # so it is not glued to the first line of the next file.
       cat "$file"
+      echo
     else
       echo "Skipping unsupported file: $file" >&2
     fi
   done
-} | tr -d '\r' | sort -u > "$output_file"
+} | tr -d '\r' | grep -v '^$' | sort -u > "$output_file"
 
 echo "Generated flat list: $output_file"
