@@ -13,3 +13,6 @@ upbitshotwallet3
 upbitsusers
 # Bithumb receiving account
 bithumbrecv2
+
+# Zypto app account, created by crimsonclad for the Zypto team (hive/watchmen#3)
+zyptoapp
