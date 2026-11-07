@@ -4,3 +4,12 @@
 
 # False positive, reported in hive/watchmen#3
 biconomyhive
+
+# Exchange wallets, not scammers (hive/watchmen#3)
+# Upbit hot wallets and deposit account
+upbitshotwallet1
+upbitshotwallet2
+upbitshotwallet3
+upbitsusers
+# Bithumb receiving account
+bithumbrecv2
