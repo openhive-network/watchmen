@@ -8,6 +8,9 @@ input_root="$project_root/input"
 output_dir="$project_root/output/flat"
 mkdir -p "$output_dir"
 output_file="$output_dir/badactors.txt"
+# Accounts confirmed as false positives; dropped from the output whatever
+# input lists them (contributors' files are not edited).
+exclude_file="$input_root/false-positives.txt"
 
 # Source files to process
 files=(
@@ -40,6 +43,8 @@ files=(
       echo "Skipping unsupported file: $file" >&2
     fi
   done
-} | tr -d '\r' | grep -v '^$' | sort -u > "$output_file"
+} | tr -d '\r' | grep -v '^$' \
+  | grep -vxFf <(tr -d '\r' < "$exclude_file" | grep -v -e '^#' -e '^$' || true) \
+  | sort -u > "$output_file"
 
 echo "Generated flat list: $output_file"

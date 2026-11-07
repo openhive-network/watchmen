@@ -1,0 +1,6 @@
+# Accounts removed from output/flat/badactors.txt even when an input lists them.
+# One account per line; lines starting with # are comments.
+# Add the reason (issue/MR reference) in a comment above each entry.
+
+# False positive, reported in hive/watchmen#3
+biconomyhive
